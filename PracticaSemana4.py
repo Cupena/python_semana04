@@ -19,8 +19,12 @@ def calcular_subtotal(precioProducto, cantidadProducto):
     return subtotal
 
 def aplicar_descuento(subtotal, descuento):
-    descuentado = subtotal * descuento
-    return descuentado
+    if subtotal >= 3000:
+        descuentado = subtotal * descuento
+        return descuentado
+    else:
+        descuentado = "0"
+        return descuentado
 
 def aplicar_impuesto(subtotal, descuentado):
     impuesto = (subtotal - descuentado) * 0.15
