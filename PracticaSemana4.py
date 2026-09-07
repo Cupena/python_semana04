@@ -32,7 +32,10 @@ def calcular_total(subtotal, descuentado, impuesto):
 
 def mostrar_listado(subtotal, descuentado,  impuesto, total):
     print("Subtotal: C$", subtotal)
-    
+    print("El descuento es de: C$", descuentado)
+    print("El impuesto es de: C$", impuesto)
+    print("El total es de: C$", total)
+
 
 subtotal = calcular_subtotal(precioProducto, cantidadProducto)
 descuentado = aplicar_descuento(subtotal, descuento)
