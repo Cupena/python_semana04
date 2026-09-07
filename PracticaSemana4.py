@@ -10,7 +10,7 @@ Probar el programa con una compra que reciba descuento y otra que no lo reciba.
 Explicar qué parámetros presentan comportamiento similar al paso por valor."""
 
 nombreProducto = input("Ingrese el nombre del producto: ")
-precioProducto = float(input("Ingrese el precio del producto: "))
+precioProducto = int(input("Ingrese el precio del producto: "))
 cantidadProducto = int(input("Ingrese cuanto llevara: "))
 descuento = 0.08
 
@@ -25,12 +25,19 @@ def aplicar_descuento(subtotal, descuento):
 def aplicar_impuesto(subtotal, descuentado):
     impuesto = (subtotal - descuentado) * 0.15
     return impuesto
+
 def calcular_total(subtotal, descuentado, impuesto):
     total = (subtotal - descuentado) + impuesto
     return total
 
 def mostrar_listado(subtotal, descuentado,  impuesto, total):
-    print (f"El subtotal es: C${subtotal}, se le aplica un descuento de: C${descuentado}, pagando un IVA de: C${impuesto} para un total de: C${total})
-    return 
-
+    print("Subtotal: C$", subtotal)
     
+
+subtotal = calcular_subtotal(precioProducto, cantidadProducto)
+descuentado = aplicar_descuento(subtotal, descuento)
+impuesto = aplicar_impuesto(subtotal, descuentado)
+total = calcular_total(subtotal, descuentado, impuesto)
+
+mostrar_listado(subtotal, descuentado, impuesto, total)
+
